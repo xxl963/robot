@@ -1,0 +1,2 @@
+pf_localisation:socspioneer
+-DCATKIN_DEVEL_PREFIX=/home/xuemeng/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/xuemeng/catkin_ws/install -G Unix Makefiles

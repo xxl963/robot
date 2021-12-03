@@ -1,0 +1,16 @@
+<launch>
+	<param name="robot_description" textfile="$(find mbot_description)/urdf/urdf/mbot_base.urdf" />
+
+	<!-- set GUI parameters，show joint control plugin -->
+	<param name="use_gui" value="true"/>
+	
+	<!-- run joint_state_publisher node，发布机器人的关节状态  -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+	
+	<!-- 运行robot_state_publisher节点，发布tf  -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+	
+	<!-- 运行rviz可视化界面 -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find mbot_description)/config/mbot_urdf.rviz" required="true" />
+</launch>
+
